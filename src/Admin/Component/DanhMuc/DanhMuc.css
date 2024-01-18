@@ -1,0 +1,11 @@
+/* ThemLoaiSanPham.css */
+.add-category-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+/* Thêm các luật CSS khác tùy thuộc vào ý muốn của bạn */

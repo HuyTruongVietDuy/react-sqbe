@@ -1,0 +1,175 @@
+    .HomeProduct{    
+      
+    
+        width: 100%;
+        min-height: auto;
+
+    }
+
+    .title-HomeProduct{
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 40px;
+    }
+
+
+    .title-HomeProduct h1{
+
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+
+        font-size: 36px;
+        font-weight: bolder;
+        font-style: italic;
+        text-transform: uppercase;
+    
+    }
+
+
+    .Container-Product {
+        width: 90%;
+        margin: 0 auto; /* Để căn giữa container */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    .Container-Product .box-Product{
+
+        width: 350px;
+        height: 500px;
+        position: relative;
+       
+        margin-bottom: 20px;
+    }
+
+    .Container-Product .box-Product .Hot-Product{
+    position: absolute;
+    top:-6%;
+    right: 0;
+    width:100px;
+    line-height: 30px;
+
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 100%;
+        background-color: black;
+        
+    }
+    .Container-Product .box-Product .Image-Container{
+        height:400px;
+        width: 100%;
+        background-color: ghostwhite;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .Image-Product,
+    .Image-Product-hover {
+        width: 100%;
+        height: 400px;
+        object-fit: cover; /* Đảm bảo ảnh không bị méo khi kích thước không phù hợp */
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.3s ease; /* Hiệu ứng chuyển động mềm dịu */
+        height: 400px;
+        width: 100%;
+    }
+
+    .Image-Product img,
+    .Image-Product-hover img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .Image-Product-hover {
+        opacity: 0; /* Ảnh hover ẩn ban đầu */
+        
+    }
+
+    .box-Product:hover .Image-Product {
+        opacity: 0; /* Khi hover, ảnh ban đầu ẩn */
+    }
+
+    .box-Product:hover .Image-Product-hover {
+        opacity: 1; /* Khi hover, ảnh hover hiển thị */
+    }
+
+
+
+
+
+    .Container-Product .box-Product .Name-Product{
+    height: 4%;
+    width: 100%;
+    font-size: 110%;
+    margin-top: 1.5%;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    }
+
+
+    .Container-Product .box-Product .Price-Product{
+    height: 4%;
+    width: 100%;
+    font-size: 100%;
+    margin-top: 1%;
+    font-weight: 500;
+    text-align: left;
+    }
+    
+
+
+
+    .Container-Product .box-Product .Button-Buy-Product{
+    height: 10%;
+    width: 100%;
+
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .Container-Product .box-Product .Button-Buy-Product button{
+    border: none;
+    padding: 2.5% 15%;
+    font-size: 100%;
+
+    font-weight: bolder;
+
+    border-radius:8px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    }
+
+
+    .Container-Product .box-Product .Button-Buy-Product button:hover{
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+        }
+
+
+
+        @media only screen and (max-width: 768px) {
+            .Container-Product {
+                width: 95%;
+                display: block; /* Đổi thành display: block khi màn hình nhỏ hơn 768px */
+            }
+        
+            .Container-Product .box-Product {
+                width: 100%; /* Đổi chiều rộng thành 100% cho responsive */
+                margin-bottom: 100px;
+            }
+        }

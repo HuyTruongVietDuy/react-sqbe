@@ -33,7 +33,7 @@ function Footer() {
         <br />
         <div id="FacebookProvider">
         <FacebookProvider appId="YOUR_APP_ID">
-        <Page href="https://www.facebook.com/profile.php?id=61551692137712" tabs="timeline" width="320" height="0" />
+        <Page href="https://www.facebook.com/profile.php?id=100084162947803" tabs="timeline" width="320" height="0" />
       </FacebookProvider>
         </div>
         

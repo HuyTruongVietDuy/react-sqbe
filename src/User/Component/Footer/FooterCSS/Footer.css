@@ -11,6 +11,8 @@ footer{
     clear: both;
     padding-top: 40px;
     color: white;
+    text-align: center;
+   justify-content: center;
 }
 
 footer p{
@@ -27,7 +29,7 @@ float: left;
 }
 
 footer .footer-left ul li{
-
+    list-style: none;
   font-size: 14px;
   margin: 8px 0px;
    }
@@ -40,7 +42,7 @@ footer .footer-left ul li{
 }
 
 footer .footer-center ul li{
-
+    list-style: none;
     font-size: 14px;
     margin: 8px 0px;
      }
@@ -80,7 +82,7 @@ footer .footer-center ul li{
 .footer-bottom p{
     font-weight: 300;
     font-size: 15px;
-
+    text-align: left;
 }
 
 @media only screen and (max-width: 1088px) {
@@ -88,7 +90,8 @@ footer .footer-center ul li{
 footer{
     padding-top: 30px;
     min-height: 200px;
-
+    align-items: center;
+    
 }
 
 .footer-left, .footer-center, .footer-right{
@@ -141,6 +144,7 @@ footer .footer-bottom{
     margin-top: 10px;
     display: block;
     padding-bottom: 0px;
+    text-align: left;
 }
 
 }

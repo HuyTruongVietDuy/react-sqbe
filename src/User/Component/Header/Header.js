@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './HeaderCss/Header.css';
+import './Header.css';
 
 import HeaderTop from './HeaderComponents/Header-Top';
 import HeaderLeft from './HeaderComponents/Header-Left';
@@ -39,11 +39,11 @@ function Header() {
     setIsHienThiTimKiem(!isHienThiTimKiem);
   };
 
-  const isSmallScreen = window.innerWidth <= 1266; // Adjust the screen width as needed
+  const isSmallScreen = window.innerWidth <= 1266; 
 
   return (
-    <div>
-      <header className={isSmallScreen || viTriCuonTrang > 40 ? 'scrolled' : ''}>
+    <div >
+      <header id="header"className={isSmallScreen || viTriCuonTrang > 40 ? 'scrolled' : ''}>
         <HeaderTop />
         <HeaderLeft chuyenDoiTrangThaiSideBarMB={chuyenDoiTrangThaiSideBarMB}/>
         <HeaderCenter />

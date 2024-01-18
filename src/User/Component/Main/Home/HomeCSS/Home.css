@@ -1,0 +1,51 @@
+.BackGroud-Home {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.BackGroud-Home img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.blur-image {
+  filter: blur(3px);
+}
+
+.go-to-shopping {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px; /* Tăng kích thước padding để làm nổi bật hơn */
+  border-radius: 10px; /* Làm tròn các góc */
+  cursor: pointer;
+  filter: brightness(100%);
+  transition: filter 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng chuyển động mềm dịu cho màu chữ */
+  color: white;
+  font-size: 24px; /* Tăng kích thước chữ */
+}
+
+.go-to-shopping:hover {
+  filter: brightness(80%);
+  color: #ffeb3b; /* Thay đổi màu chữ khi hover */
+  background-color: rgba(0, 0, 0, 0.8); /* Thay đổi màu nền khi hover */
+  
+}
+
+@media only screen and (max-width: 1316px) {
+  .Container section{
+    padding-top:60px
+  }
+
+  .go-to-shopping {
+    font-size: 16px;
+  }
+}
+
+

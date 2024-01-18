@@ -1,0 +1,627 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: bolder;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+
+    height: 127px;
+    background-color: #D9D9D9;
+    box-shadow: 0px 1px 10px black;
+    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động */
+}
+
+.container {
+    margin-top: 127px;
+}
+
+#header.scrolled {
+    transform: translateY(-21%);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+.header-top {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.header-top p {
+    display: inline-block;
+    animation: marquee 6s linear infinite; /* Sửa easing thành linear */
+    color: white;
+    font-size: 18px;
+    text-shadow: 2px 15px 2px gray transparent;
+    word-spacing: 2px;
+    font-weight: bold;
+    margin: 0 140px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%); /* Sửa giá trị ban đầu thành 100% */
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.header-left {
+    width: 200px;
+    position: relative;
+    float: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    
+}
+
+.header-left .logo-gif {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.header-left img {
+    width: 100%;
+    cursor: pointer;
+}
+
+#header .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10px;
+   
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+#header .header-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.main-menu > li {
+  margin: 30px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
+  right:50%;
+}
+
+.main-menu li Link {
+  color: black;
+}
+
+
+.main-menu li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-menu li:hover:after,
+.main-menu li.active:after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.main-menu li.active {
+  color: #000;
+}
+
+/* CSS for submenu (menu cấp 2) */
+.main-menu li.has-dropdown {
+  position: relative;
+ 
+}
+
+.main-menu li.has-dropdown ul.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  list-style: none;
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  opacity: 0.79;
+  z-index: 1;
+  width: 200px;
+  visibility: hidden;
+  transition: visibility 0.3s ease-in-out;
+ 
+}
+
+.main-menu li.has-dropdown ul.sub-menu  li{
+  border-bottom:  0.1px solid white;
+  padding: 20px 0px;
+}
+
+.main-menu li.has-dropdown:hover ul.sub-menu {
+  display: block;
+  visibility: visible;
+
+  color: white;
+  font-weight: bolder;
+ 
+ 
+}
+
+.main-menu li.has-dropdown ul.sub-menu li {
+  padding: 10px;
+  font-size: 24px;
+
+}
+
+.main-menu li.has-dropdown ul.sub-menu li:hover {
+ background-color: #0a0a0a;
+  color: #595959;
+}
+
+/* CSS for sub-submenu (menu cấp 3) */
+.main-menu li.has-dropdown ul.sub-menu li.has-submenu {
+  position: relative;
+}
+
+.main-menu li.has-dropdown ul.sub-menu li.has-submenu ul.sub-sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100.5%;
+  display: none;
+  list-style: none;
+  background-color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  
+  z-index: 1;
+  width: 200px;
+  visibility: hidden;
+  transition: visibility 0.3s ease-in-out;
+}
+
+.main-menu li.has-dropdown ul.sub-menu li.has-submenu:hover ul.sub-sub-menu {
+  display: block;
+  visibility: visible;
+
+  
+}
+
+.main-menu li.has-dropdown ul.sub-menu li.has-submenu ul.sub-sub-menu li a {
+  padding: 10px;
+  font-size: 12px;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-menu li.has-dropdown ul.sub-menu li.has-submenu ul.sub-sub-menu li:hover {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  
+}
+
+/* Responsive adjustments for menu cấp 2 và menu cấp 3 */
+@media screen and (max-width: 768px) {
+  .main-menu li.has-dropdown ul.sub-menu,
+  .main-menu li.has-dropdown ul.sub-menu li.has-submenu ul.sub-sub-menu {
+      top: 0;
+      left: 0;
+  }
+
+}
+#header .header-right{
+    float: right;
+
+    display: flex;
+    justify-content: right;
+    align-items: right;
+
+    position: relative;
+    margin-right:5% ;
+    top:-45px;
+    width: auto;
+}
+
+#header .header-right ul{
+    list-style: none;
+    display: inline-flex;
+}
+
+#header .header-right ul li{
+    margin: 0 6px;
+    
+}
+
+
+
+#header .header-right ul li span{
+   cursor: pointer;
+    font-size: 30px;
+}
+
+
+#header .header-right ul li a{
+    color: #000000;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 300;
+    margin-top: 50%;
+}
+
+#header .header-right ul li a:hover{
+    color: #595959;
+}
+
+
+
+#search-side-nav {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initial position, off-screen */
+    width: 500px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.header-side-search{
+    padding-left: 50px;
+    margin-top: 80px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.main-side-search{
+    padding-left: 50px;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 12px;
+
+}
+
+.main-side-search input{
+    padding: 12px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.1);
+     /* Hiệu ứng chuyển màu khi focus */
+border: none;
+outline: none; /* Bỏ outline khi focus */
+     transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.main-side-search input:focus {
+    background-color: #7699b0; /* Màu xanh nhạt khi focus */
+    outline: none; /* Bỏ outline khi focus */
+}
+
+#search-side-nav.open {
+    right: 0; /* Show the side navigation */
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Transparent initially */
+    pointer-events: none; /* Allow clicks to pass through to elements behind it */
+    
+    transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.overlay.active {
+    /* ... */
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: blur(2px); /* Hiệu ứng mờ */
+}
+
+
+.close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: #333;
+    font-size: 40px;
+}
+
+.close-icon:hover {
+   color: red;
+}
+
+
+
+.menu-icon-mb{
+    display: none;
+}
+
+
+.logo-mb{
+    display: none;
+}
+
+#hide-des{
+    display: none;
+}
+
+.sidebar{
+  display: none;
+}
+/* Styles for screens with a width of 600 pixels or less */
+
+
+
+@media only screen and (max-width: 1316px) {
+  .sidebar{
+    display: block;
+  }
+    #hide-des{
+        display: block;
+    }
+   .header-left .logo-gif,
+   .header-center .main-menu,
+   .header-top,
+   .header-right{
+    display: none;
+   }
+
+   #header{
+    height: 79px;
+   }
+
+   .header-left .menu-icon-mb{
+    display: block;
+    position: relative;
+    top: 25px;
+    margin-left: 8%;
+   }
+
+   .header-left .menu-icon-mb span{
+    font-size: 50px;
+   }
+
+   /* Add this to your CSS file */
+   .sidebar {
+    margin-top: 63px;
+    position: fixed;
+    top: 0;
+    left: -300px; /* Sidebar initially off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    left: 0; /* Move the sidebar to the screen when open */
+  }
+
+  #close-sidebar {
+    /* Add your styles for the close button */
+    cursor: pointer;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* Adjust the color as needed */
+    background: none;
+    border: none;
+
+    position: absolute;
+    right: 4%;
+    top: 10px;
+    font-size: 30px;
+  }
+
+  #close-sidebar:hover {
+    color: red;
+  }
+
+  .header-center .logo-mb{
+    display: block;
+    position: relative;
+    right: 15%;
+    margin-top: 2px;
+   
+  }
+
+  
+
+  .header-center .logo-mb img{
+    margin-top: 5px;
+    width: 90%;
+  }
+
+  #header .header-right{
+   top: -40px;
+   margin-right:5px ;
+  }
+
+ #header .header-right ul li span{
+   font-size: 30px;
+ }
+
+  .header-right #hide-mb{
+    display: none;
+  }
+
+
+
+.main-side-search input{
+    padding: 10px;
+    width: 200px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease; /* Transition background color on hover */
+}
+
+.menu-item:hover {
+  background-color: #3d3d3d;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; /* Transition height for the dropdown effect */
+}
+
+.submenu.open {
+  max-height: 500px; /* Adjust the maximum height as needed */
+}
+
+.submenu .menu-item {
+  padding-left: 20px; /* Adjust the indentation for submenu items */
+}
+
+.sub-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; /* Transition height for sub-submenu */
+}
+
+.sub-submenu.open {
+  max-height: 500px; /* Adjust the maximum height as needed */
+}
+
+.sub-submenu .menu-item {
+  padding-left: 40px; /* Adjust the indentation for sub-submenu items */
+}
+
+.sub-submenu li {
+  list-style: none;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease; /* Transition background color on hover */
+}
+
+.sub-submenu li:hover {
+  background-color: #919191;
+}
+  
+
+#search-side-nav {
+  position: fixed;
+  top: 0;
+  left: -500px; /* Initial position, off-screen */
+  width: 350px;
+  height: 100%;
+  background-color: #ffffff;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+#search-side-nav.open {
+  left: 0; /* Show the side navigation */
+}
+  }
+  
+  @media only screen and (max-width: 926px) {
+  
+    
+      
+    
+      .header-center .logo-mb img{
+        
+        width: 90%;
+      }
+    
+    
+    
+     #header .header-right ul li span{
+       font-size: 30px;
+     }
+     
+  }
+
+  @media only screen and (max-width: 626px) {
+    .header-center .logo-mb{
+        display: block;
+        position: relative;
+        right: 25%;
+      }
+
+      #header .header-right{
+        top:-25px
+    }
+      
+    #header .header-right ul li span{
+        font-size: 26px;
+      }
+      
+      .header-center .logo-mb img{
+        
+        width: 75%;
+      }
+     
+  }
+
+  @media only screen and (max-width: 542px) {
+    .header-center .logo-mb{
+        display: block;
+        position: relative;
+        right: 33%;
+        top: 8px; 
+       
+      }
+
+      #header .header-right ul li span{
+        font-size: 22px;
+      }
+  }
+
+  

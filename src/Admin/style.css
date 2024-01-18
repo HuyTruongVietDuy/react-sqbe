@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Content Styles */
+  .content {
+    padding: 0 48px;
+  }
+  
+  /* Sider Styles */
+  .sider {
+    background: #f0f2f5; /* Thay đổi màu nền theo ý muốn */
+  }
+  
+  /* Footer Styles */
+  .footer {
+    text-align: center;
+  }
+
+
+
+  
+  
