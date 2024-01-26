@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Cấu hình để phục vụ tệp tĩnh từ thư mục 'uploads'
-router.use('/uploads', express.static('uploads'));
+router.use('/uploads', express.static('uploads/loaisanpham'));
 
 // Route to add a product type
 router.post('/add', multer.single('hinh_loaisp'), async (req, res) => {

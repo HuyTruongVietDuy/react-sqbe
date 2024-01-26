@@ -5,15 +5,15 @@ const path = require('path');
 // Thiết lập storage engine cho Multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Thư mục lưu trữ hình ảnh
+    cb(null, 'uploads/loaisanpham'); // Thư mục lưu trữ hình ảnh
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));  
   },
 });
 
 // Khởi tạo Multer middleware
-const upload = multer({
+const upload = multer({ 
   storage: storage,
   limits: { fileSize: 5 * 1024 * 1024 }, // Giới hạn kích thước file (đơn vị byte)
   fileFilter: function (req, file, cb) {
