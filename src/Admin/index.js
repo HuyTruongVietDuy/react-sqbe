@@ -10,6 +10,8 @@ import ThemSanPham from './Component/SanPham/Them';
 import DanhSachDanhMuc from './Component/DanhMuc/DanhSach';
 import DanhSachLoaiSanPham from './Component/LoaiSanPham/DanhSach';
 import DanhSachSanPham from './Component/SanPham/DanhSach';
+import ChiTietSanPham from './Component/ChiTietSanPham/DanhSach';
+import ChiTietMotSanPham from './Component/ChiTietMotSanPham/DanhSach';
 // ... (previous imports)
 
 // ... (previous imports)
@@ -94,6 +96,8 @@ const Admin = () => {
             <Route path="/danh-sach-loại-sản-phẩm" element={<DanhSachLoaiSanPham />} />
             <Route path="/them-sản-phẩm-sản-phẩm" element={<DanhSachSanPham />} />
             <Route path="/danh-sach-Sản-Phẩm" element={<DanhSachSanPham />} />
+            <Route path="/chi-tiet-san-pham/:id" element={<ChiTietSanPham />} />
+            <Route path="/chi-tiet-mot-san-pham/:id" element={<ChiTietMotSanPham />} />
             </Routes>
           </Content>
         </Layout>

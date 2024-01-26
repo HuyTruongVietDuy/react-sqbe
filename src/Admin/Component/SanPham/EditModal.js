@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Form, Input, Select, message } from 'antd';
+import { Modal, Form, Input, Select, message, Radio } from 'antd';
 import axios from 'axios';
 
 const EditModal = ({ open, onOk, onCancel, data, form }) => {
@@ -20,12 +20,13 @@ const EditModal = ({ open, onOk, onCancel, data, form }) => {
   useEffect(() => {
     if (data) {
       form.setFieldsValue({
-        id_loaisp: data.ten_loaisp,
+        id_loaisp: data.id_loaisp,
         ten_sanpham: data.ten_sanpham,
+        trang_thai: data.trang_thai,
       });
-     
+      setSelectedLoaiSanPham(data.id_loaisp);
     }
-  }, [data, form]);
+  }, [data, form, loaiSanPhamList]);
 
   const handleOk = () => {
     form
@@ -61,7 +62,6 @@ const EditModal = ({ open, onOk, onCancel, data, form }) => {
           <Select
             placeholder="Chọn loại sản phẩm"
             value={selectedLoaiSanPham}
-            onChange={value => setSelectedLoaiSanPham(value)}
           >
             {loaiSanPhamList.map(loaiSanPham => (
               <Select.Option key={loaiSanPham.id_loaisp} value={loaiSanPham.id_loaisp}>
@@ -81,7 +81,18 @@ const EditModal = ({ open, onOk, onCancel, data, form }) => {
           <Input />
         </Form.Item>
 
-        
+        <Form.Item
+          name="trang_thai"
+          label="Trạng thái"
+          rules={[
+            { required: true, message: 'Vui lòng chọn trạng thái' },
+          ]}
+        >
+          <Radio.Group>
+            <Radio value={1}>Ẩn</Radio>
+            <Radio value={2}>Hiện</Radio>
+          </Radio.Group>
+        </Form.Item>
       </Form>
     </Modal>
   );
